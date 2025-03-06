@@ -49,3 +49,18 @@ public class BattleShip {
         System.out.println(messege);
         return target;
     }
+
+    private static int[] getUserCordinate(int gameBoardLenght) {
+        int row;
+        int col;
+
+        do {
+            System.out.print("row: ");
+            row = new Scanner(System.in).nextInt();
+        } while (row < 0 || row > +gameBoardLenght + 1);
+        do {
+            System.out.print("col: ");
+            col = new Scanner(System.in).nextInt();
+        } while (col < 0 || col > gameBoardLenght + 1);
+        return new int[]{row, col};
+    }
