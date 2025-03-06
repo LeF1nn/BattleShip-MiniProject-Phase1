@@ -136,7 +136,23 @@ public class Main {
      * @param trackingGrid The player's tracking grid to update.
      */
     static void playerTurn(char[][] opponentGrid, char[][] trackingGrid) {
-        //todo
+        System.out.print("Enter Your Coordinate: ");
+        String input = scanner.next().toUpperCase();
+        if (isValidInput(input)) {
+            int row = input.charAt(1) - '0';
+            int col = input.charAt(0) - 'A';
+            if (opponentGrid[row][col] == 'S') {
+                System.out.print("HIT! ");
+                opponentGrid[row][col] = 'X';
+                trackingGrid[row][col] = 'X';
+            } else if (!(opponentGrid[row][col] == 'S')) {
+                System.out.print("mISS!");
+                opponentGrid[row][col] = 'O';
+                trackingGrid[row][col] = 'O';
+            } else {
+                System.out.print("Invalid input!");
+            }
+        }
     }
 
     /**
