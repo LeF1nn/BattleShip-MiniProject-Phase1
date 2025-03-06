@@ -64,3 +64,26 @@ public class BattleShip {
         } while (col < 0 || col > gameBoardLenght + 1);
         return new int[]{row, col};
     }
+
+    private static void printGameBoard(char[][] gameBoard, char water, char ship) {
+        int gameBoardLenght = gameBoard.length;
+        System.out.print(" ");
+        for (int i = 0; i < gameBoardLenght; i++) {
+            System.out.print(i + 1 + " ");
+        }
+        System.out.println();
+        for (int row = 1; row < gameBoardLenght; row++) {
+            System.out.print(row + " ");
+            for (int col = 1; col < gameBoardLenght; col++) {
+                char possition = gameBoard[row][col];
+                if (possition == water) {
+                    System.out.print(water + " ");
+                } else {
+                    System.out.print(possition + " ");
+                }
+
+            }
+            System.out.println();
+        }
+        //System.out.println();
+    }
