@@ -95,3 +95,18 @@ public class BattleShip {
         }
         return placeShips(gameBoard, shipNum, water, ship);
     }
+
+    private static char[][] placeShips(char[][] gameBoard, int shipNum, char water, char ship) {
+        int placeships = 0;
+        int gameBoardlenght = gameBoard.length;
+        while (placeships < shipNum) {
+            int[] location = generateshipcor(gameBoardlenght);
+
+            char possibleplacement = gameBoard[location[0]][location[1]];
+            if (possibleplacement == water) {
+                gameBoard[location[0]][location[1]] = ship;
+                placeships++;
+            }
+        }
+        return gameBoard;
+    }
