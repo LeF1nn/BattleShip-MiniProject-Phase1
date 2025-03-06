@@ -78,7 +78,24 @@ public class Main {
      * @param grid The grid where ships need to be placed.
      */
     static void placeShips(char[][] grid) {
-        //todo
+        for (int i = 2; i < 6; i++) {
+            boolean place = false;
+            while (!place) {
+                Random rand = new Random();
+                int row = (rand.nextInt(100)) % 9;
+                int col = (rand.nextInt(100)) % 9;
+                int size = i;
+                boolean horizontal = Math.random() < 0.5;
+                if (canPlaceShip(grid, row, col, size, horizontal)) {
+                    if (horizontal) {
+                        grid[row][col + i] = 'S';
+                    } else {
+                        grid[row + i][col] = 'S';
+                    }
+                }
+                place = true;
+            }
+        }
     }
 
     /**
