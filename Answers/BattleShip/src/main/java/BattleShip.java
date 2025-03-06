@@ -207,7 +207,16 @@ public class Main {
      * @param grid The tracking grid to print.
      */
     static void printGrid(char[][] grid) {
-        //todo
+        System.out.print("  A B C D E F J");
+        for (int i = 0; i < GRID_SIZE; i++) {
+            System.out.println(i + " ");
+            for (int j = 0; j < GRID_SIZE; j++) {
+                System.out.print(grid[i][j] + " ");
+
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }
 
