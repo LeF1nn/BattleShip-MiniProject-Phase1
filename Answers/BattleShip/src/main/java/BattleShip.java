@@ -87,3 +87,11 @@ public class BattleShip {
         }
         //System.out.println();
     }
+
+    private static char[][] createGameBoard(int gameBoardLenght, char water, char ship, int shipNum) {
+        char[][] gameBoard = new char[gameBoardLenght][gameBoardLenght];
+        for (char[] row : gameBoard) {
+            Arrays.fill(row, water);
+        }
+        return placeShips(gameBoard, shipNum, water, ship);
+    }
