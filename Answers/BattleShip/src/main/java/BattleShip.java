@@ -21,3 +21,10 @@ public class BattleShip {
             printGameBoard(gameBoard, water, ship);
     }
 }
+
+    private static char[][] uptadeGameboard(char[][] gameBoard, int[] guessCordinates, char locatianviewUpdate) {
+        int row = guessCordinates[0];
+        int col = guessCordinates[1];
+        gameBoard[row][col] = locatianviewUpdate;
+        return gameBoard;
+    }
