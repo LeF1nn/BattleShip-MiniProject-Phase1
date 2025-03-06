@@ -167,8 +167,11 @@ public class Main {
      * @return true if the input is in the correct format, false otherwise.
      */
     static boolean isValidInput(String input) {
-        //todo
-        return true;
+        boolean c = true;
+        if (!(input.length() == 2) || !(input.charAt(0) >= 'A') || !(input.charAt(0) <= 'J') || !(input.charAt(1) >= '0' || !(input.charAt(1) <= '9')))
+            c = false;
+
+        return c;
     }
 
     /**
