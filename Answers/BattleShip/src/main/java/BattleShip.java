@@ -110,3 +110,13 @@ public class BattleShip {
         }
         return gameBoard;
     }
+
+    private static int[] generateshipcor(int gameBoardlenght) {
+        int[] cordinate = new int[2];
+        for (int i = 0; i < cordinate.length; i++) {
+            cordinate[i] = new Random().nextInt(gameBoardlenght);
+
+        }
+        return cordinate;
+    }
+
