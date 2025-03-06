@@ -94,7 +94,20 @@ public class Main {
      * @return true if the ship can be placed at the specified location, false otherwise.
      */
     static boolean canPlaceShip(char[][] grid, int row, int col, int size, boolean horizontal) {
-        //todo
+        int count = 0;
+
+        if (horizontal) {
+            if (col + size > GRID_SIZE) return false;
+            while (count < GRID_SIZE) {
+                if (grid[row][col + count] == 'S') return false;
+                count++;
+            }
+            count = 0;
+        } else if (row + size > GRID_SIZE) return false;
+        while (count < GRID_SIZE) {
+            if (grid[row + count][col] == 'S') return false;
+            count++;
+        }
         return true;
     }
 
